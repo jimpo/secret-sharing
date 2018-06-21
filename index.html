@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Shamir's Secret Sharing</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/simple-grid.css">
+
+  <script type="application/javascript" src="js/shamirs.js"></script>
+  <script type="application/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h2>Split</h2>
+        <form id="split-form" action="#">
+          <p>
+            <label for="n">Shares (<code>n</code>):</label>
+            <input name="n" type="number" value="4"></input>
+          </p>
+          <p>
+            <label for="m">Threshold (<code>m</code>):</label>
+            <input name="m" type="number" value="3"></input>
+          </p>
+          <p>
+            <label for="secret">Secret</label>
+            <textarea name="secret" rows="1"></textarea>
+          </p>
+          <button type="submit">Submit</button>
+        </form>
+
+        <div id="split-results"></div>
+      </div>
+
+      <div class="col-6">
+        <h2>Combine</h2>
+        <form id="combine-form" action="#">
+          <p>
+            <label for="m">Threshold (<code>m</code>):</label>
+            <input name="m" type="number" value="3"></input>
+          </p>
+          <div id="combine-inputs"></div>
+          <button type="submit">Submit</button>
+        </form>
+
+        <div id="combine-result"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
