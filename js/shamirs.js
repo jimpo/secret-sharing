@@ -125,9 +125,9 @@
                 basis = mult(basis, term);
             }
             const group = mult(ySamples[i], basis);
-		    result = add(result, group);
-	    }
-	    return result;
+            result = add(result, group);
+        }
+        return result;
     }
 
     // div divides two numbers in GF(2^8)
@@ -201,17 +201,17 @@
             const coefficients = makePolynomial(val, threshold-1);
 
             // Generate a `parts` number of (x,y) pairs
-		    // We cheat by encoding the x value once as the final index,
-		    // so that it only needs to be stored once.
-		    for (let i = 0; i < parts; i++) {
-			    const x = xCoordinates[i] + 1;
-			    const y = evaluatePolynomial(coefficients, x);
-			    out[i][idx] = y;
-		    }
-	    }
+            // We cheat by encoding the x value once as the final index,
+            // so that it only needs to be stored once.
+            for (let i = 0; i < parts; i++) {
+                const x = xCoordinates[i] + 1;
+                const y = evaluatePolynomial(coefficients, x);
+                out[i][idx] = y;
+            }
+        }
 
-	    // Return the encoded secrets
-	    return out;
+        // Return the encoded secrets
+        return out;
     }
 
     // Combine is used to reverse a Split and reconstruct a secret
@@ -262,12 +262,12 @@
             }
 
             // Interpolate the polynomial and compute the value at 0
-		    const val = interpolatePolynomial(xSamples, ySamples, 0);
+            const val = interpolatePolynomial(xSamples, ySamples, 0);
 
-		    // Evaluate the 0th value to get the intercept
-		    secret[idx] = val;
-	    }
-	    return secret;
+            // Evaluate the 0th value to get the intercept
+            secret[idx] = val;
+        }
+        return secret;
     }
 
     function permute(arr, n) {
